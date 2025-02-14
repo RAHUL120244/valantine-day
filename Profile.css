@@ -1,0 +1,113 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f0f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 10px; /* Add some padding for smaller screens */
+    overflow: hidden; /* Prevent scrolling */
+}
+
+/* Profile Card */
+.profile-card {
+    width: 100%;
+    max-width: 350px;
+    padding: 20px;
+    background-color: #ffebef;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    animation: slideIn 1s ease-out;
+    box-sizing: border-box;
+}
+
+/* Heart Shape Animation */
+.heart-shape {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 80px;
+    background-color: #ff4081;
+    clip-path: polygon(50% 0%, 0% 35%, 50% 100%, 100% 35%);
+    animation: heartBounce 2s infinite;
+}
+
+/* Profile Image */
+.profile-image img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid #ff4081;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+}
+
+/* Profile Details */
+.profile-details h2 {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #d5006b;
+    font-weight: bold;
+}
+
+.profile-details .bio {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #ff4081;
+    font-style: italic;
+}
+
+/* Heart Bounce Animation */
+@keyframes heartBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Slide-In Animation for Profile Card */
+@keyframes slideIn {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 480px) {
+    .profile-card {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .profile-image img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .profile-details h2 {
+        font-size: 20px;
+    }
+
+    .profile-details .bio {
+        font-size: 14px;
+    }
+}
